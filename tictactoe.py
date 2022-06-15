@@ -10,8 +10,9 @@ def display_board(board):
 
 
 # TEST Step 1:
-test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
-# display_board(test_board)
+# test_board = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+test_board = ['#','X','O','X','O','X','O','X','O','X']
+display_board(test_board)
 
 # STEP 2
 # Write a function that can take in a player input
@@ -84,23 +85,59 @@ def win_check(board, mark):
 # Write a function that uses the random module to randomly decide which player goes first. 
 
 
-
-def choose_first():
-    
-    random_player = random.randint(1,2)
-    if random_player == 1:
-        player1 = 'Player 1'
-        return player1
-    else:
-        player2 = 'Player 2'
-        return player2
-
-
-print(choose_first())
-
 def choose_first():
     players = ['player 1', 'player 2']
     players = random.choice(players)
     return players
 
-print(choose_first())
+# print(choose_first())
+
+# STEP 6
+# Write a function that returns a boolean indicating whether a space on the board is freely available.
+
+def space_check(board, position):
+    if board[position] == ' ':
+        return True 
+    else:
+        return False
+
+
+# Check Step
+# print(space_check(test_board, 1))
+
+# STEP 7 
+#  Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
+
+# def full_board_check(board):
+#     if board[1::-1] == 
+
+# test_board = ['#', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
+# counter = 0
+# print(counter)
+# for i in test_board:
+#     if i == '#':
+#         continue
+#     elif i == 'X' or i == 'O':
+#         counter = counter + 1
+#     print(i)
+
+test_board = ['#','X','O','X','O','X','O','X','O',' X']
+
+def full_board_check(board):
+    if ' ' in board:
+        return False
+    return True
+print(full_board_check(test_board))
+
+
+
+
+# list_c = [20, 8.9, "Hi", 0, ' ', "name"]
+
+# def get_number_of_elements(list):
+#     count = 0
+#     for element in list:
+#         count += 1
+#     return count
+
+# print("Number of elements in the list: ", get_number_of_elements(list_c))
