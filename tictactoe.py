@@ -1,3 +1,4 @@
+import random
 # STEP 1
 # Write a function that can print out a board
 def display_board(board):
@@ -10,29 +11,29 @@ def display_board(board):
 
 # TEST Step 1:
 test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
-display_board(test_board)
+# display_board(test_board)
 
 # STEP 2
 # Write a function that can take in a player input
 
-
-def player_input():
+# player_input() assigns a marker x or o
+def player_input(): 
     letter_X = 'X'
     letter_O = 'O'
 
     while True:
-        choice = input("please pick a marker 'X or O' ")
-        if choice in letter_O:
-            return choice
-        elif choice in letter_X:
-            return choice
+        marker = input("please pick a marker 'X or O' ")
+        if marker == letter_O:
+            return marker
+        elif marker == letter_X:
+            return marker
         else:
-            if choice not in letter_O or choice not in letter_X:
+            if marker not in letter_O or marker not in letter_X:
                 print("Sorry, I didn't understand. Please make sure to choose X or O ")
 
 
 # TEST Step 2:
-player_input()
+# player_input()
 
 
 # STEP 3
@@ -48,16 +49,58 @@ def place_marker(board, marker, position):
 
 
 # TEST Step 3:
-place_marker(test_board, '$', 8)
-display_board(test_board)
+# place_marker(test_board, '$', 8)
+# display_board(test_board)
 
 
 # STEP 4
 #  Write a function that takes in a board and a mark (X or O)
 # and then checks to see if that mark has won.
 def win_check(board, mark):
+    if board[1] == mark and board[2] ==mark and board[3] == mark:
+        return True
+    elif board[4] == mark and board[5] == mark and board[6] == mark:
+        return True
+    elif board[7] == mark and board[8] == mark and board[9] ==  mark:
+        return True 
+    elif board[1] == mark and board[4] == mark and board[7] == mark:
+        return True
+    elif board[2] == mark and board[5] == mark and board[8] == mark:
+        return True
+    elif board[3] == mark and board[6] == mark and board[9] == mark:
+        return True
+    elif board[1] == mark and board[5] == mark and board[9] ==  mark:
+        return True
+    elif board[7] == mark and board[5] == mark and board[3] == mark:
+        return True
+    else:
+        return False
 
-    pass
 
 
-win_check(test_board, 'X')
+# print(win_check(test_board,'X'))
+
+# STEP 5
+# Write a function that uses the random module to randomly decide which player goes first. 
+
+
+
+def choose_first():
+    
+    random_player = random.randint(1,2)
+    if random_player == 1:
+        player1 = 'Player 1'
+        return player1
+    else:
+        player2 = 'Player 2'
+        return player2
+
+
+print(choose_first())
+
+def choose_first():
+    players = ['player 1', 'player 2']
+    players = random.choice(players)
+    return players
+
+print(choose_first())
