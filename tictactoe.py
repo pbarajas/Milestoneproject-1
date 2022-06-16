@@ -11,8 +11,8 @@ def display_board(board):
 
 # TEST Step 1:
 # test_board = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-test_board = ['#','X','O','X','O','X','O','X','O','X']
-display_board(test_board)
+# test_board = ['#','X','O','X','O','X','O','X','O','X']
+# display_board(test_board)
 
 # STEP 2
 # Write a function that can take in a player input
@@ -108,36 +108,44 @@ def space_check(board, position):
 # STEP 7 
 #  Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
 
-# def full_board_check(board):
-#     if board[1::-1] == 
-
-# test_board = ['#', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
-# counter = 0
-# print(counter)
-# for i in test_board:
-#     if i == '#':
-#         continue
-#     elif i == 'X' or i == 'O':
-#         counter = counter + 1
-#     print(i)
-
-test_board = ['#','X','O','X','O','X','O','X','O',' X']
-
 def full_board_check(board):
     if ' ' in board:
         return False
     return True
-print(full_board_check(test_board))
+# print(full_board_check(test_board))
 
 
+# STEP 8
+#  Write a function that asks for a player's next position (as a number 1-9)
+# and then uses the function from step 6 to check if it's a free position. If it is, 
+# then return the position for later use.
+
+def player_choice(board):
+    player_next_position = int(input('Choose next position (1-9): '))
+    return space_check(board, player_next_position)
+    
 
 
-# list_c = [20, 8.9, "Hi", 0, ' ', "name"]
+# print(player_choice(test_board))
 
-# def get_number_of_elements(list):
-#     count = 0
-#     for element in list:
-#         count += 1
-#     return count
 
-# print("Number of elements in the list: ", get_number_of_elements(list_c))
+# STEP 9
+#  Write a function that asks the player if they want to play again
+#  and returns a boolean True if they do want to play again.
+
+def replay():
+    play_again = input('Play again? (Yes/No): ').lower()
+    if play_again == 'yes':
+        return True
+
+
+# STEP 10
+#  Here comes the hard part! Use while loops and the functions you've made to run the game!
+
+# print('Welcome to Tic Tac Toe!')
+# test_board = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+
+# while True:
+#     display_board(test_board)
+#     pass
+
