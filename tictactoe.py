@@ -3,11 +3,11 @@ import random
 # STEP 1
 # Write a function that can print out a board
 def display_board(board):
-    print('\n'*100)
-
+    print('\n' * 100)
     print(f"{board[1]}|{board[2]}|{board[3]}")
     print(f"{board[4]}|{board[5]}|{board[6]}")
     print(f"{board[7]}|{board[8]}|{board[9]}")
+
 
 
 
@@ -130,15 +130,19 @@ def replay():
 def main():
     print('Welcome to Tic Tac Toe!')
 
-    while True:
-        game_on = True 
+    while True: 
+        game_on = True
         test_board = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     
         # Assign Marker to player 
         player_one_marker, player_two_marker = player_input()
     
         # Radomly choose the player
+        # Fix this issue, make a print statement
+        # get back to this function and print who's turn it is
         choose_random = choose_first()
+        print(choose_random + ' will go first.')
+        
         
         while game_on:
             if choose_random == 'Player 1':
@@ -181,5 +185,3 @@ def main():
             
 if __name__ == '__main__':
     main()
-
-
